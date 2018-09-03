@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "targets": {
+          "browsers": ["last 4 versions", "not ie < 11"],
+          "node": "10"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "plugins": ["jest", "react"],
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "semi": ["off"],
+    "no-var": ["error"],
+    "array-bracket-spacing": ["error"],
+    "eqeqeq": ["warn"],
+    "max-len": ["warn", {"code": 120}],
+    "max-depth": ["warn", {"max": 4}],
+    "max-params": ["warn", {"max": 5}],
+    "complexity": ["warn", {"max": 5}]
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  }
+}
