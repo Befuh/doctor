@@ -1,0 +1,9 @@
+{
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "setupFiles": ["<rootDir>/tests/setupTests.js"],
+  "transformIgnorePatterns": [
+    "<rootDir>/node_modules/(?!(react-redux|lodash-es)/)"
+  ]
+}
