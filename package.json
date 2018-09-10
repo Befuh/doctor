@@ -9,7 +9,8 @@
     "style:check": "eslint 'src/**/*.js*'",
     "style:fix": "eslint --fix 'src/**/*.js*'",
     "build:prod": "webpack --config webpack.prod.js --mode production -p",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json --verbose",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
