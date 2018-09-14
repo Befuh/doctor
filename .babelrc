@@ -5,11 +5,18 @@
       {
         "useBuiltIns": "entry",
         "targets": {
-          "browsers": ["last 4 versions", "not ie < 11"],
+          "browsers": [
+            "last 4 versions",
+            "not ie < 11"
+          ],
           "node": "10"
         }
       }
     ],
     "@babel/preset-react"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "@babel/plugin-transform-runtime"
   ]
 }

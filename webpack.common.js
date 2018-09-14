@@ -10,16 +10,20 @@ module.exports = {
   plugins: [
     new Dotenv()
   ],
-  resolveLoader: {
-    modules: [path.join(__dirname, 'node_modules')],
-    extensions: ['js', 'jsx']
+  resolve: {
+    modules: [path.join(__dirname, 'node_modules'), path.join(__dirname, 'src')],
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?$|\.js?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ]
       },
       {
         test: /\.s?css$/,
