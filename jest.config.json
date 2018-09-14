@@ -5,5 +5,10 @@
   "setupFiles": ["<rootDir>/tests/setupTests.js"],
   "transformIgnorePatterns": [
     "<rootDir>/node_modules/(?!(react-redux|lodash-es)/)"
+  ],
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.{js,jsx}",
+    "!<rootDir>/src/app.jsx",
+    "!**/node_modules/**"
   ]
 }
