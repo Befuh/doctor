@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<ForwardRef(Bootstrap(undefined))
+  bg="primary"
+  expand="lg"
+>
+  <ForwardRef(Bootstrap(NavbarBrand))
+    href="#home"
+  >
+    React-Bootstrap
+  </ForwardRef(Bootstrap(NavbarBrand))>
+</ForwardRef(Bootstrap(undefined))>
+`;
