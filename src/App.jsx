@@ -15,8 +15,8 @@ const App = (
   <Provider store={store}>
     <Fragment>
       <Header/>
-      <SearchForm/>
-      <Footer/>
+      {/*<SearchForm/>*/}
+      {/*<Footer/>*/}
     </Fragment>
   </Provider>
 );

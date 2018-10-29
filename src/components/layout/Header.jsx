@@ -1,9 +1,21 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import Logo from '../../images/Logo.png';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
+
+import './Header.scss';
 
 const Header = () => (
-  <Navbar bg="primary" expand="lg">
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar expand='md' className='header'>
+    <Container>
+      <Navbar.Brand href='#home'>
+        <Image src={Logo} alt='Befu'/>
+      </Navbar.Brand>
+      <Navbar.Toggle/>
+      <Navbar.Collapse>
+        <Nav.Link eventKey={1} href='#' className='active navigation-link'>Patients</Nav.Link>
+        <Nav.Link eventKey={2} href='#' className='navigation-link'>Hospitals</Nav.Link>
+      </Navbar.Collapse>
+    </Container>
   </Navbar>
 );
 

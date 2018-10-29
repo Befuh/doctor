@@ -1,0 +1,27 @@
+@import "../../styles/base/variables";
+
+.header {
+  background-color: $white;
+  border-bottom: solid 1px $light;
+  /**
+  * @todo Remove important
+   */
+  padding: 0 !important;
+
+  img {
+    max-height: 30px;
+  }
+
+  .navigation-link{
+    font-weight: bold;
+    color: $secondary-text-color;
+    padding: 1rem 1rem;
+    &:hover, &.active {
+      color: $primary-text-color;
+    }
+    &.active{
+      border-bottom: solid 2px $primary;
+    }
+  }
+
+}

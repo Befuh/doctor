@@ -32,6 +32,13 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|svg)$/i,
+        use: [
+          'file-loader',
+          'image-webpack-loader'
+        ]
       }
     ]
   }
