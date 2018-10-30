@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer renders correctly 1`] = `
-<div>
-  Footer
-</div>
+<footer
+  className="footer"
+>
+  <Container
+    tag="div"
+  >
+    Footer
+  </Container>
+</footer>
 `;

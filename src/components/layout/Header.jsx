@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Logo from '../../images/Logo.png';
-import { Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
 import './Header.scss';
 
-const Header = () => (
-  <Navbar expand='md' className='header'>
-    <Container>
-      <Navbar.Brand href='#home'>
-        <Image src={Logo} alt='Befu'/>
-      </Navbar.Brand>
-      <Navbar.Toggle/>
-      <Navbar.Collapse>
-        <Nav.Link eventKey={1} href='#' className='active navigation-link'>Patients</Nav.Link>
-        <Nav.Link eventKey={2} href='#' className='navigation-link'>Hospitals</Nav.Link>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-);
+class Header extends Component {
+  state = {
+    isOpen: false
+  };
+
+  toggle = event => {
+    event.preventDefault();
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  render () {
+    return (
+      <Navbar expand='md' color='light' light className='header'>
+        <Container>
+          <NavbarBrand href='#home'>
+            <img src={Logo} alt='Befu'/>
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle}/>
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav navbar>
+              <NavItem>
+                <NavLink href='#' className='active navigation-link'>Patients</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href='#' className='navigation-link'>Hospitals</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+}
 
 export default Header;

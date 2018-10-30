@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import React, { Fragment } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import configureStore from './store/configureStore';
@@ -16,7 +16,7 @@ const App = (
     <Fragment>
       <Header/>
       {/*<SearchForm/>*/}
-      {/*<Footer/>*/}
+      <Footer/>
     </Fragment>
   </Provider>
 );

@@ -3,12 +3,12 @@ import { shallow } from 'enzyme';
 import Footer from '../../../../src/components/layout/Footer';
 
 describe('Footer', () => {
-  let header;
+  let footer;
   beforeEach(() => {
-    header = shallow(<Footer/>)
+    footer = shallow(<Footer/>)
   });
 
   it('renders correctly', () => {
-    expect(header).toMatchSnapshot();
+    expect(footer).toMatchSnapshot();
   });
 });

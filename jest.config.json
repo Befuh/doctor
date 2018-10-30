@@ -10,5 +10,9 @@
     "<rootDir>/src/**/*.{js,jsx}",
     "!<rootDir>/src/App.jsx",
     "!**/node_modules/**"
-  ]
+  ],
+  "moduleNameMapper": {
+    "\\.(jpe?g|png|svg)$": "<rootDir>/tests/fileMock.js",
+    "\\.(scss|less)$": "<rootDir>/tests/styleMock.js"
+  }
 }

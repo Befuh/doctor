@@ -1,14 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<ForwardRef(Bootstrap(undefined))
-  bg="primary"
-  expand="lg"
+<Navbar
+  className="header"
+  color="light"
+  expand="md"
+  light={true}
+  tag="nav"
 >
-  <ForwardRef(Bootstrap(NavbarBrand))
-    href="#home"
+  <Container
+    tag="div"
   >
-    React-Bootstrap
-  </ForwardRef(Bootstrap(NavbarBrand))>
-</ForwardRef(Bootstrap(undefined))>
+    <NavbarBrand
+      href="#home"
+      tag="a"
+    >
+      <img
+        alt="Befu"
+        src="test-file-stub"
+      />
+    </NavbarBrand>
+    <NavbarToggler
+      onClick={[Function]}
+      tag="button"
+      type="button"
+    />
+    <Collapse
+      appear={false}
+      enter={true}
+      exit={true}
+      in={false}
+      isOpen={false}
+      mountOnEnter={false}
+      navbar={true}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      tag="div"
+      timeout={350}
+      unmountOnExit={false}
+    >
+      <Nav
+        navbar={true}
+        tag="ul"
+        vertical={false}
+      >
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            className="active navigation-link"
+            href="#"
+            tag="a"
+          >
+            Patients
+          </NavLink>
+        </NavItem>
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            className="navigation-link"
+            href="#"
+            tag="a"
+          >
+            Hospitals
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Container>
+</Navbar>
 `;
