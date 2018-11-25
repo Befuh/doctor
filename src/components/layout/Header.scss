@@ -1,12 +1,17 @@
 @import "../../styles/base/variables";
+@import "~bootstrap/scss/bootstrap-grid";
 
 .header {
   background-color: $white;
-  border-bottom: solid 1px $light;
   /**
   * @todo Remove important
    */
+  border: none !important;
   padding: 0 !important;
+
+  .header-container {
+    border-bottom: solid 1px $light;
+  }
 
   img {
     max-height: 30px;
@@ -24,4 +29,9 @@
     }
   }
 
+  @include media-breakpoint-up(md){
+    .push-right {
+      margin-left: 100px;
+    }
+  }
 }

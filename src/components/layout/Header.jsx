@@ -17,12 +17,12 @@ class Header extends Component {
   render () {
     return (
       <Navbar expand='md' color='light' light className='header'>
-        <Container>
+        <Container className='header-container'>
           <NavbarBrand href='#home'>
             <img src={Logo} alt='Befu'/>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle}/>
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <Collapse isOpen={this.state.isOpen} navbar className='push-right'>
             <Nav navbar>
               <NavItem>
                 <NavLink href='#' className='active navigation-link'>Patients</NavLink>
