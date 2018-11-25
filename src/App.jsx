@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import React, { Fragment } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import Content from './components/layout/Content';
 import configureStore from './store/configureStore';
-import SearchForm from './components/patients/SearchForm';
 
 import './App.scss'
 import 'normalize.css/normalize.css'
@@ -15,7 +15,7 @@ const App = (
   <Provider store={store}>
     <Fragment>
       <Header/>
-      {/*<SearchForm/>*/}
+      <Content/>
       <Footer/>
     </Fragment>
   </Provider>
