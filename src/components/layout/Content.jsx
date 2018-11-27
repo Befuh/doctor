@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
 import SearchForm from '../patients/SearchForm';
@@ -6,16 +6,15 @@ import SearchForm from '../patients/SearchForm';
 import './Content.scss';
 
 export const Content = () => (
-  <Fragment>
-    <div className='content-header'>
-      <Container>
-        <h1>Patients</h1>
-      </Container>
+  <Container className='content'>
+    <div className='title'>
+      <span className='buttons float-right'>
+        <a href='#' className='btn btn-primary btn-sm'>New Patient</a>
+      </span>
+      <h1>Patients</h1>
     </div>
-    <Container className='content'>
-      <SearchForm/>
-    </Container>
-  </Fragment>
+    <SearchForm/>
+  </Container>
 );
 
 export default connect()(Content);
