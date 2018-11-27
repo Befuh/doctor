@@ -3,12 +3,11 @@
 exports[`Header renders correctly 1`] = `
 <Navbar
   className="header"
-  color="light"
   expand="md"
-  light={true}
   tag="nav"
 >
   <Container
+    className="header-container"
     tag="div"
   >
     <NavbarBrand
@@ -20,58 +19,50 @@ exports[`Header renders correctly 1`] = `
         src="test-file-stub"
       />
     </NavbarBrand>
-    <NavbarToggler
-      onClick={[Function]}
-      tag="button"
-      type="button"
-    />
-    <Collapse
-      appear={false}
-      enter={true}
-      exit={true}
-      in={false}
-      isOpen={false}
-      mountOnEnter={false}
+    <Nav
+      className="align-content-end"
       navbar={true}
-      onEnter={[Function]}
-      onEntered={[Function]}
-      onEntering={[Function]}
-      onExit={[Function]}
-      onExited={[Function]}
-      onExiting={[Function]}
-      tag="div"
-      timeout={350}
-      unmountOnExit={false}
+      tag="ul"
+      vertical={false}
     >
-      <Nav
-        navbar={true}
-        tag="ul"
-        vertical={false}
+      <UncontrolledDropdown
+        inNavbar={true}
+        nav={true}
       >
-        <NavItem
-          tag="li"
+        <DropdownToggle
+          aria-haspopup={true}
+          caret={true}
+          className="navigation-link"
+          color="secondary"
+          nav={true}
         >
-          <NavLink
-            className="active navigation-link"
-            href="#"
-            tag="a"
-          >
-            Patients
-          </NavLink>
-        </NavItem>
-        <NavItem
-          tag="li"
+          Hi, Dr. Alex
+        </DropdownToggle>
+        <DropdownMenu
+          flip={true}
+          right={true}
+          tag="div"
         >
-          <NavLink
-            className="navigation-link"
-            href="#"
-            tag="a"
+          <DropdownItem
+            tag="button"
+            toggle={true}
           >
-            Hospitals
-          </NavLink>
-        </NavItem>
-      </Nav>
-    </Collapse>
+            Account
+          </DropdownItem>
+          <DropdownItem
+            divider={true}
+            tag="button"
+            toggle={true}
+          />
+          <DropdownItem
+            tag="button"
+            toggle={true}
+          >
+            Logout
+          </DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
+    </Nav>
   </Container>
 </Navbar>
 `;

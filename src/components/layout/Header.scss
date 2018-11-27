@@ -2,23 +2,16 @@
 @import "~bootstrap/scss/bootstrap-grid";
 
 .header {
-  background-color: $white;
-  /**
-  * @todo Remove important
-   */
+  background-color: $white !important;
   border: none !important;
   padding: 0 !important;
-
-  .header-container {
-    border-bottom: solid 1px $light;
-  }
+  box-shadow: 0 0 6px 0 hsla(0, 0, 0, 0.2);
 
   img {
     max-height: 30px;
   }
 
   .navigation-link{
-    font-weight: bold;
     color: $secondary-text-color;
     padding: 1rem 1rem;
     &:hover, &.active {
@@ -26,12 +19,6 @@
     }
     &.active{
       border-bottom: solid 2px $primary;
-    }
-  }
-
-  @include media-breakpoint-up(md){
-    .push-right {
-      margin-left: 100px;
     }
   }
 }
