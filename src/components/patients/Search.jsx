@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { startUpdatePatients } from '../../actions/patients';
 
-export class SearchForm extends React.Component {
+export class Search extends React.Component {
   state = {
     firstName: '',
     lastName: '',
@@ -80,7 +80,7 @@ export class SearchForm extends React.Component {
   }
 }
 
-SearchForm.propTypes = {
+Search.propTypes = {
   startUpdatePatients: PropTypes.func.isRequired
 };
 
@@ -88,4 +88,4 @@ const mapDispatchToProps = dispatch => ({
   startUpdatePatients: query => dispatch(startUpdatePatients(query))
 });
 
-export default connect(undefined, mapDispatchToProps)(SearchForm);
+export default connect(undefined, mapDispatchToProps)(Search);

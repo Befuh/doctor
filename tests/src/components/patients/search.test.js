@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SearchForm } from '../../../../src/components/patients/SearchForm';
+import { Search } from '../../../../src/components/patients/Search';
 
 let wrapper, startUpdatePatients, preventDefault;
 beforeEach(() => {
   preventDefault = jest.fn();
   startUpdatePatients = jest.fn();
-  wrapper = shallow(<SearchForm startUpdatePatients={startUpdatePatients}/>);
+  wrapper = shallow(<Search startUpdatePatients={startUpdatePatients}/>);
 });
 
 describe('search form', () => {
