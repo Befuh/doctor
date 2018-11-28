@@ -1,5 +1,11 @@
+@import '../../styles/base/variables';
+
 .patients-list {
   margin-top: 40px;
+
+  th {
+    color: $secondary-text-color;
+  }
 
   .actions a{
     margin-right: 5px;

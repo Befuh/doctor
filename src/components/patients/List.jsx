@@ -1,8 +1,8 @@
+import { Table } from 'reactstrap';
 import React, { PureComponent } from 'react';
-import { ButtonGroup, ButtonToolbar, Table } from 'reactstrap';
+import { FaEye, FaPen } from 'react-icons/fa';
 
 import './List.scss';
-import { FaEye, FaPen } from "react-icons/fa";
 
 class List extends PureComponent {
   render () {
