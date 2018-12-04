@@ -26,7 +26,9 @@ describe('patients actions', () => {
     await startUpdatePatients({ firstName: 'Cristiano' })(dispatch);
 
     expect(patients.get).toHaveBeenCalledWith({ firstName: 'Cristiano', lastName: '', identifier: '', sex: '' });
+    expect(dispatch).toHaveBeenCalledWith(startPatientSearch());
     expect(dispatch).toHaveBeenCalledWith(updatePatients([patientsFixture[0]]));
+    expect(dispatch).toHaveBeenCalledWith(finishPatientSearch());
   });
 
   it('starts the patient search action', () => {

@@ -13,7 +13,7 @@ describe('patients reducers', () => {
       patients: patientsFixture
     };
     const state = patientsReducer(undefined, action);
-    expect(state.patients).toEqual(patientsFixture);
+    expect(state.list).toEqual(patientsFixture);
   });
 
   it('starts patient search', () => {

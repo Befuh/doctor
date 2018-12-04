@@ -6,8 +6,8 @@ const defaultState = {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case 'UPDATE_PATIENTS':
-      const { patients } = action;
-      return { ...state, patients };
+      const { patients: list } = action;
+      return { ...state, list };
     case 'START_PATIENT_SEARCH':
       return { ...state, searching: true };
     case 'FINISH_PATIENT_SEARCH':

@@ -5,9 +5,13 @@ export const updatePatients = patients => ({
   patients
 });
 
-export const startUpdatePatients = ({ firstName = '', lastName = '', identifier = '', sex = '' }) => async dispatch => {
-  const patients = await getPatients({ firstName, lastName, identifier, sex });
-  dispatch(updatePatients(patients));
+export const startUpdatePatients = function ({ firstName = '', lastName = '', identifier = '', sex = '' }) {
+  return async function (dispatch) {
+    dispatch(startPatientSearch());
+    const patients = await getPatients({ firstName, lastName, identifier, sex });
+    dispatch(updatePatients(patients));
+    dispatch(finishPatientSearch());
+  };
 };
 
 export const startPatientSearch = () => ({

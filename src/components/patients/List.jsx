@@ -51,7 +51,7 @@ List.propTypes = {
 };
 
 const mapStateToProps = ({ patients }) => ({
-  patients
+  patients: patients.list
 });
 
 export default connect(mapStateToProps)(List);
