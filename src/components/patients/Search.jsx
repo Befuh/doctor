@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FaSearch } from 'react-icons/fa';
 import { startUpdatePatients } from '../../actions/patients';
 
 export class Search extends React.Component {
@@ -72,7 +73,7 @@ export class Search extends React.Component {
             </select>
           </div>
           <div className='col-auto'>
-            <button type='submit' className='form-control btn btn-primary'>Search</button>
+            <button type='submit' className='form-control btn btn-primary'><FaSearch/> Search</button>
           </div>
         </div>
       </form>
