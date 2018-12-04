@@ -87,7 +87,8 @@ exports[`search form renders correctly 1`] = `
         className="form-control btn btn-primary"
         type="submit"
       >
-        Search
+        <FaSearch />
+         Search
       </button>
     </div>
   </div>
