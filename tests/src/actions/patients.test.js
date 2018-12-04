@@ -1,6 +1,11 @@
 import patientsFixture from '../../fixtures/patients';
 import * as patients from '../../../src/agents/patients';
-import { startUpdatePatients, updatePatients } from '../../../src/actions/patients';
+import {
+  finishPatientSearch,
+  startPatientSearch,
+  startUpdatePatients,
+  updatePatients
+} from '../../../src/actions/patients';
 
 let dispatch;
 beforeEach(() => {
@@ -22,5 +27,13 @@ describe('patients actions', () => {
 
     expect(patients.get).toHaveBeenCalledWith({ firstName: 'Cristiano', lastName: '', identifier: '', sex: '' });
     expect(dispatch).toHaveBeenCalledWith(updatePatients([patientsFixture[0]]));
+  });
+
+  it('starts the patient search action', () => {
+    expect(startPatientSearch()).toEqual({ type: 'START_PATIENT_SEARCH' });
+  });
+
+  it('finishes the patient search action', () => {
+    expect(finishPatientSearch()).toEqual({ type: 'FINISH_PATIENT_SEARCH' });
   });
 });
