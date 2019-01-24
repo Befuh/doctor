@@ -36,7 +36,7 @@ export class Search extends React.Component {
             <input
               type='text'
               id='firstName'
-              className='form-control'
+              className='form-control form-control-sm'
               placeholder='Jane'
               onChange={this.changeInputField('firstName')}
             />
@@ -46,7 +46,7 @@ export class Search extends React.Component {
             <input
               type='text'
               id='lastName'
-              className='form-control'
+              className='form-control form-control-sm'
               placeholder='Doe'
               onChange={this.changeInputField('lastName')}
             />
@@ -56,7 +56,7 @@ export class Search extends React.Component {
             <input
               type='text'
               id='identifier'
-              className='form-control'
+              className='form-control form-control-sm'
               placeholder='kasdf8903342'
               onChange={this.changeInputField('identifier')}
             />
@@ -65,7 +65,7 @@ export class Search extends React.Component {
             <label htmlFor='sex'>Sex</label>
             <select
               id='sex'
-              className='form-control'
+              className='form-control form-control-sm'
               onChange={this.changeInputField('sex')}
             >
               <option value='female'>Female</option>
@@ -73,7 +73,9 @@ export class Search extends React.Component {
             </select>
           </div>
           <div className='col-auto'>
-            <button type='submit' className='form-control btn btn-primary'><FaSearch/> Search</button>
+            <button type='submit' className='form-control form-control-sm btn btn-sm btn-primary'>
+              <FaSearch/> Search
+            </button>
           </div>
         </div>
       </form>
