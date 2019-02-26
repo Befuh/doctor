@@ -16,7 +16,7 @@ exports[`search form renders correctly 1`] = `
         First name
       </label>
       <input
-        className="form-control"
+        className="form-control form-control-sm"
         id="firstName"
         onChange={[Function]}
         placeholder="Jane"
@@ -32,7 +32,7 @@ exports[`search form renders correctly 1`] = `
         Last name
       </label>
       <input
-        className="form-control"
+        className="form-control form-control-sm"
         id="lastName"
         onChange={[Function]}
         placeholder="Doe"
@@ -48,7 +48,7 @@ exports[`search form renders correctly 1`] = `
         Identifier
       </label>
       <input
-        className="form-control"
+        className="form-control form-control-sm"
         id="identifier"
         onChange={[Function]}
         placeholder="kasdf8903342"
@@ -64,7 +64,7 @@ exports[`search form renders correctly 1`] = `
         Sex
       </label>
       <select
-        className="form-control"
+        className="form-control form-control-sm"
         id="sex"
         onChange={[Function]}
       >
@@ -84,7 +84,7 @@ exports[`search form renders correctly 1`] = `
       className="col-auto"
     >
       <button
-        className="form-control btn btn-primary"
+        className="form-control form-control-sm btn btn-sm btn-primary"
         type="submit"
       >
         <FaSearch />
