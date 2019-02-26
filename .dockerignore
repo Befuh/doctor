@@ -1,0 +1,9 @@
+**/.git
+**/coverage
+**/node_modules
+**/tests
+.dockerignore
+.env.dist
+.eslintrc.json
+.gitignore
+jest.config.json
