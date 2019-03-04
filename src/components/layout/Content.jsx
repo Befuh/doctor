@@ -1,22 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
-import {FaPlus} from 'react-icons/fa';
 import List from '../patients/List';
-import SearchForm from '../patients/Search';
+import Edit from '../patients/Edit';
 
 import './Content.scss';
 
 export const Content = () => (
   <Container className='content'>
-    <div className='title'>
-      <span className='buttons float-right'>
-        <a href='#' className='btn btn-primary btn-sm'><FaPlus/> Patient</a>
-      </span>
-      <h1>Patients</h1>
-    </div>
-    <SearchForm/>
-    <List/>
+    <Edit
+      patient={{
+        id: 8,
+        user_id: 7,
+        identifier: 'ade521',
+        user: {
+          data: {
+            id: 7,
+            first_name: 'Fingong',
+            last_name: 'Tralalla',
+            date_of_birth: '1980-01-15',
+            sex: 'male'
+          }
+        }
+      }}
+    />
   </Container>
 );
 
