@@ -1,11 +1,11 @@
 export default [
   {
-    id: expect.any(Number),
-    user_id: expect.any(Number),
+    id: 1,
+    user_id: 1,
     identifier: 'test identifier',
     user: {
       data: {
-        id: expect.any(Number),
+        id: 1,
         first_name: 'Cristian',
         last_name: 'Ronaldo',
         date_of_birth: '1980-01-15',
@@ -23,18 +23,18 @@ export default [
     },
     pre_existing_conditions: {
       data: [{
-        id: expect.any(Number),
+        id: 1,
         name: 'asthma'
       }]
     }
   },
   {
-    id: expect.any(Number),
-    user_id: expect.any(Number),
+    id: 2,
+    user_id: 2,
     identifier: 'test identifier',
     user: {
       data: {
-        id: expect.any(Number),
+        id: 2,
         first_name: 'Lionel',
         last_name: 'Messi',
         date_of_birth: '1980-01-15',
@@ -52,18 +52,18 @@ export default [
     },
     pre_existing_conditions: {
       data: [{
-        id: expect.any(Number),
+        id: 2,
         name: 'asthma'
       }]
     }
   },
   {
-    id: expect.any(Number),
-    user_id: expect.any(Number),
+    id: 3,
+    user_id: 3,
     identifier: 'test identifier',
     user: {
       data: {
-        id: expect.any(Number),
+        id: 3,
         first_name: 'Marta',
         last_name: 'Vieira da Silva',
         date_of_birth: '1980-01-15',
@@ -81,7 +81,7 @@ export default [
     },
     pre_existing_conditions: {
       data: [{
-        id: expect.any(Number),
+        id: 3,
         name: 'asthma'
       }]
     }
