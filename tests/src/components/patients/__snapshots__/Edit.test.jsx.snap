@@ -10,6 +10,7 @@ exports[`Edit patients renders correctly 1`] = `
     </h1>
   </div>
   <Form
+    onSubmit={[Function]}
     tag="form"
   >
     <FormGroup
@@ -35,7 +36,7 @@ exports[`Edit patients renders correctly 1`] = `
         onChange={[Function]}
         placeholder="First Name"
         type="text"
-        value="Fingong"
+        value="Cristian"
       />
     </FormGroup>
     <FormGroup
@@ -61,7 +62,7 @@ exports[`Edit patients renders correctly 1`] = `
         onChange={[Function]}
         placeholder="Last Name"
         type="text"
-        value="Tralalla"
+        value="Ronaldo"
       />
     </FormGroup>
     <FormGroup

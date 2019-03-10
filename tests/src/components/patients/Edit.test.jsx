@@ -1,24 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import patients from '../../../fixtures/patients';
 import { Edit } from '../../../../src/components/patients/Edit';
 
 let edit;
+let preventDefault;
+let updatePatient;
 beforeEach(() => {
-  const patient = {
-    id: 8,
-    user_id: 7,
-    identifier: 'ade521',
-    user: {
-      data: {
-        id: 7,
-        first_name: 'Fingong',
-        last_name: 'Tralalla',
-        date_of_birth: '1980-01-15',
-        sex: 'male'
-      }
-    }
-  };
-  edit = shallow(<Edit patient={patient}/>)
+  preventDefault = jest.fn();
+  updatePatient = jest.fn();
+  edit = shallow(<Edit patient={patients[0]} updatePatient={updatePatient}/>)
 });
 
 describe('Edit patients', () => {
@@ -33,12 +24,17 @@ describe('Edit patients', () => {
     { id: 'sex', value: 'female' }
   ].forEach(({ id, value }) => {
     it(`changes the input ${id}`, () => {
-      const preventDefault = jest.fn();
-
       edit.find(`#${id}`).simulate('change', { preventDefault, target: { value } });
 
       expect(preventDefault).toHaveBeenCalled();
       expect(edit.state().patient.user.data[id]).toBe(value);
     });
-  })
+  });
+
+  it('updates the patient when the form is submitted', () => {
+    edit.find('Form').simulate('submit', { preventDefault });
+
+    expect(preventDefault).toHaveBeenCalled();
+    expect(updatePatient).toHaveBeenCalledWith(patients[0]);
+  });
 });

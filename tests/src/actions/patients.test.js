@@ -4,12 +4,15 @@ import {
   finishPatientSearch,
   startPatientSearch,
   startUpdatePatients,
+  updatePatient,
   updatePatients
 } from '../../../src/actions/patients';
 
+jest.mock('../../../src/agents/patients');
+
 let dispatch;
 beforeEach(() => {
-  patients.get = jest.fn(() => ([patientsFixture[0]]));
+  jest.resetModules();
   dispatch = jest.fn();
 });
 
@@ -23,6 +26,8 @@ describe('patients actions', () => {
   });
 
   it('updates patients asynchronously', async () => {
+    patients.get.mockReturnValue([patientsFixture[0]]);
+
     await startUpdatePatients({ firstName: 'Cristiano' })(dispatch);
 
     expect(patients.get).toHaveBeenCalledWith({ firstName: 'Cristiano', lastName: '', identifier: '', sex: '' });
@@ -37,5 +42,13 @@ describe('patients actions', () => {
 
   it('finishes the patient search action', () => {
     expect(finishPatientSearch()).toEqual({ type: 'FINISH_PATIENT_SEARCH' });
+  });
+
+  it('updates a patient', async () => {
+    patients.update.mockReturnValue(patientsFixture[0]);
+
+    await updatePatient(patientsFixture[0])(dispatch);
+
+    expect(patients.update).toHaveBeenCalledWith(patientsFixture[0]);
   });
 });

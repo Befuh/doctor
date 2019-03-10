@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component, Fragment } from 'react';
+import { updatePatient } from '../../actions/patients';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 export class Edit extends Component {
-  propTypes = {
-    patient: PropTypes.object.isRequired
+  static propTypes = {
+    patient: PropTypes.object.isRequired,
+    updatePatient: PropTypes.func.isRequired
   };
 
   state = {
@@ -24,7 +26,7 @@ export class Edit extends Component {
         <div className='title'>
           <h1>Edit Patient</h1>
         </div>
-        <Form>
+        <Form onSubmit={this.submit}>
           <FormGroup>
             <Label for='first_name'>First Name</Label>
             <Input
@@ -70,6 +72,11 @@ export class Edit extends Component {
     )
   }
 
+  submit = event => {
+    event.preventDefault();
+    this.props.updatePatient(this.state.patient);
+  };
+
   changeValue = (key) => (event) => {
     event.preventDefault();
     let patient = this.state.patient;
@@ -78,7 +85,8 @@ export class Edit extends Component {
   };
 }
 
-const mapStateToProps = () => ({});
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
+  updatePatient: (patient) => dispatch(updatePatient(patient))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Edit);
+export default connect(null, mapDispatchToProps)(Edit);

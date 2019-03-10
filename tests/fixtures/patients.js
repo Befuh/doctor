@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     user_id: 1,
-    identifier: 'test identifier',
+    identifier: 'pijkl7087807',
     user: {
       data: {
         id: 1,

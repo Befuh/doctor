@@ -23,3 +23,10 @@ export const get = async ({ firstName = '', lastName = '', identifier = '', sex 
 
   return response.data.data;
 };
+
+export const update = async patient => {
+  let url = `${process.env.BACKEND_URL}/patients/${patient.identifier}`;
+  const response = await axios.put(url, patient);
+
+  return response.data.data;
+};
