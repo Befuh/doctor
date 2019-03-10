@@ -1,27 +1,27 @@
 import * as patients from '../agents/patients';
 
-export const updatePatients = patients => ({
+export const updateList = patients => ({
   type: 'UPDATE_PATIENTS',
   patients
 });
 
-export const startUpdatePatients = function ({ firstName = '', lastName = '', identifier = '', sex = '' }) {
+export const startUpdateList = function ({ firstName = '', lastName = '', identifier = '', sex = '' }) {
   return async function (dispatch) {
-    dispatch(startPatientSearch());
+    dispatch(startSearch());
     const patientsResult = await patients.get({ firstName, lastName, identifier, sex });
-    dispatch(updatePatients(patientsResult));
-    dispatch(finishPatientSearch());
+    dispatch(updateList(patientsResult));
+    dispatch(finishSearch());
   };
 };
 
-export const startPatientSearch = () => ({
+export const startSearch = () => ({
   type: 'START_PATIENT_SEARCH'
 });
 
-export const finishPatientSearch = () => ({
+export const finishSearch = () => ({
   type: 'FINISH_PATIENT_SEARCH'
 });
 
-export const updatePatient = patient => async dispatch => {
+export const update = patient => async dispatch => {
   await patients.update(patient);
 };

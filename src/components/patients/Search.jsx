@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
-import { startUpdatePatients } from '../../actions/patients';
+import { startUpdateList } from '../../actions/patients';
 
 export class Search extends React.Component {
   state = {
@@ -88,7 +88,7 @@ Search.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  startUpdatePatients: query => dispatch(startUpdatePatients(query))
+  startUpdatePatients: query => dispatch(startUpdateList(query))
 });
 
 export default connect(undefined, mapDispatchToProps)(Search);

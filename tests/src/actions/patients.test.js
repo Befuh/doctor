@@ -1,12 +1,6 @@
 import patientsFixture from '../../fixtures/patients';
-import * as patients from '../../../src/agents/patients';
-import {
-  finishPatientSearch,
-  startPatientSearch,
-  startUpdatePatients,
-  updatePatient,
-  updatePatients
-} from '../../../src/actions/patients';
+import * as patients from '../../../src/actions/patients';
+import * as patientsAgent from '../../../src/agents/patients';
 
 jest.mock('../../../src/agents/patients');
 
@@ -22,33 +16,33 @@ describe('patients actions', () => {
       type: 'UPDATE_PATIENTS',
       patients: patientsFixture
     };
-    expect(updatePatients(patientsFixture)).toEqual(expectedAction);
+    expect(patients.updateList(patientsFixture)).toEqual(expectedAction);
   });
 
   it('updates patients asynchronously', async () => {
-    patients.get.mockReturnValue([patientsFixture[0]]);
+    patientsAgent.get.mockReturnValue([patientsFixture[0]]);
 
-    await startUpdatePatients({ firstName: 'Cristiano' })(dispatch);
+    await patients.startUpdateList({ firstName: 'Cristiano' })(dispatch);
 
-    expect(patients.get).toHaveBeenCalledWith({ firstName: 'Cristiano', lastName: '', identifier: '', sex: '' });
-    expect(dispatch).toHaveBeenCalledWith(startPatientSearch());
-    expect(dispatch).toHaveBeenCalledWith(updatePatients([patientsFixture[0]]));
-    expect(dispatch).toHaveBeenCalledWith(finishPatientSearch());
+    expect(patientsAgent.get).toHaveBeenCalledWith({ firstName: 'Cristiano', lastName: '', identifier: '', sex: '' });
+    expect(dispatch).toHaveBeenCalledWith(patients.startSearch());
+    expect(dispatch).toHaveBeenCalledWith(patients.updateList([patientsFixture[0]]));
+    expect(dispatch).toHaveBeenCalledWith(patients.finishSearch());
   });
 
   it('starts the patient search action', () => {
-    expect(startPatientSearch()).toEqual({ type: 'START_PATIENT_SEARCH' });
+    expect(patients.startSearch()).toEqual({ type: 'START_PATIENT_SEARCH' });
   });
 
   it('finishes the patient search action', () => {
-    expect(finishPatientSearch()).toEqual({ type: 'FINISH_PATIENT_SEARCH' });
+    expect(patients.finishSearch()).toEqual({ type: 'FINISH_PATIENT_SEARCH' });
   });
 
   it('updates a patient', async () => {
-    patients.update.mockReturnValue(patientsFixture[0]);
+    patientsAgent.update.mockReturnValue(patientsFixture[0]);
 
-    await updatePatient(patientsFixture[0])(dispatch);
+    await patients.update(patientsFixture[0])(dispatch);
 
-    expect(patients.update).toHaveBeenCalledWith(patientsFixture[0]);
+    expect(patientsAgent.update).toHaveBeenCalledWith(patientsFixture[0]);
   });
 });

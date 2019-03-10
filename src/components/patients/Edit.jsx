@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component, Fragment } from 'react';
-import { updatePatient } from '../../actions/patients';
+import { update as updatePatient } from '../../actions/patients';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 export class Edit extends Component {
