@@ -1,8 +1,8 @@
 import React from 'react';
+import Edit from '../patients/Edit';
+import List from '../patients/List';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
-import List from '../patients/List';
-import Edit from '../patients/Edit';
 
 import './Content.scss';
 
