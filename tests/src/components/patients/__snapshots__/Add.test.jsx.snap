@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add patient renders correctly 1`] = `
+<Fragment>
+  <div
+    className="title"
+  >
+    <h1>
+      Add Patient
+    </h1>
+  </div>
+  <BaseForm
+    onSubmit={[Function]}
+  />
+</Fragment>
+`;
