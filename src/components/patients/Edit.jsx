@@ -1,10 +1,10 @@
 import BaseForm from './BaseForm';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { update as updatePatient } from '../../actions/patients';
 
-export class Edit extends Component {
+export class Edit extends PureComponent {
   static propTypes = {
     patient: PropTypes.object.isRequired,
     updatePatient: PropTypes.func.isRequired
